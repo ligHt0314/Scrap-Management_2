@@ -1,0 +1,163 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+.auth-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f3f4f6; /* bg-gray-100 */
+    /* Add padding here for small screens to prevent touching edges */
+    padding: 1rem 0; 
+    box-sizing: border-box;
+}
+.admin-body {
+    background-color: #111827; /* bg-gray-900 */
+}
+
+/* Auth Container */
+.auth-container {
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+    padding: 2rem; /* p-8 */
+    background-color: #ffffff;
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+.auth-container > * + * {
+    margin-top: 2rem; /* space-y-8 */
+}
+
+/* This replaces the old .signup-body rule */
+.signup-container {
+    margin: 2rem 0; /* Provides vertical spacing */
+}
+
+/* Header */
+.auth-header {
+    text-align: center;
+}
+.auth-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    color: #16a34a; /* text-green-600 */
+}
+.auth-subtitle {
+    margin-top: 0.5rem;
+    color: #4b5563; /* text-gray-600 */
+}
+
+/* Alert */
+.auth-alert {
+    background-color: #fef2f2; /* bg-red-100 */
+    border: 1px solid #fca5a5; /* border-red-400 */
+    color: #991b1b; /* text-red-700 */
+    padding: 0.75rem 1rem; /* px-4 py-3 */
+    border-radius: 0.25rem;
+}
+
+/* Form */
+.auth-form > * + * {
+    margin-top: 1.5rem; /* space-y-6 */
+}
+.input-group {
+    border-radius: 0.375rem; /* rounded-md */
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+}
+.input-group > * + * {
+    margin-top: -1px; /* -space-y-px */
+}
+
+.input-top {
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+}
+.input-bottom {
+    border-bottom-left-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+}
+.input-group input {
+    appearance: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    color: #111827;
+    box-sizing: border-box;
+}
+.input-group input::placeholder {
+    color: #6b7280;
+}
+.input-group input:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 0 2px #a7f3d0;
+    z-index: 10;
+}
+
+.input-group-signup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+.auth-input, .auth-textarea {
+    appearance: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    color: #111827;
+    box-sizing: border-box; /* Add this */
+}
+.auth-input::placeholder, .auth-textarea::placeholder {
+    color: #6b7280;
+}
+.auth-input:focus, .auth-textarea:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 0 2px #a7f3d0;
+}
+
+
+/* Button */
+.auth-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    color: #ffffff;
+    background-color: #16a34a;
+    cursor: pointer;
+}
+.auth-button:hover {
+    background-color: #15803d;
+}
+.auth-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #a7f3d0, 0 0 0 4px #16a34a;
+}
+
+/* Footer Link */
+.auth-footer-link {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+.auth-footer-link a {
+    font-weight: 500;
+    color: #16a34a;
+    text-decoration: none;
+}
+.auth-footer-link a:hover {
+    color: #15803d;
+}

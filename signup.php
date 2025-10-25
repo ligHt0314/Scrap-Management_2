@@ -44,41 +44,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Scrapify</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Inter', sans-serif; } </style>
+    <link rel="stylesheet" href="styles/auth.css">
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen py-12">
-    <div class="w-full max-w-md p-8 space-y-8 bg-white rounded-2xl shadow-lg">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold text-green-600">Scrapify</h1>
-            <p class="mt-2 text-gray-600">Create your account to start selling scrap.</p>
+<body class="auth-body">
+    <div class="auth-container signup-container">
+        <div class="auth-header">
+            <h1 class="auth-title">Scrapify</h1>
+            <p class="auth-subtitle">Create your account to start selling scrap.</p>
         </div>
         
         <?php if(!empty($errors)): ?>
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <div class="auth-alert">
             <?php foreach($errors as $error): ?>
-            <span class="block sm:inline"><?php echo $error; ?></span><br>
+            <span><?php echo $error; ?></span><br>
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
         
-        <form class="mt-8 space-y-6" action="signup.php" method="POST">
-            <div class="rounded-md shadow-sm space-y-4">
-                <input id="name" name="name" type="text" required class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Full Name">
-                <input id="email-address" name="email" type="email" required class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Email address">
-                <input id="phone" name="phone" type="tel" required class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Phone Number">
-                <textarea id="address" name="user_address" required class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Your Address"></textarea>
-                <input id="password" name="password" type="password" required class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Password">
+        <form class="auth-form" action="signup.php" method="POST">
+            <div class="input-group-signup">
+                <input name="name" type="text" required class="auth-input" placeholder="Full Name">
+                <input name="email" type="email" required class="auth-input" placeholder="Email address">
+                <input name="phone" type="tel" required class="auth-input" placeholder="Phone Number">
+                <textarea name="user_address" required class="auth-textarea" placeholder="Your Address"></textarea>
+                <input name="password" type="password" required class="auth-input" placeholder="Password">
             </div>
             <div>
-                <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Create Account</button>
+                <button type="submit" class="auth-button">Create Account</button>
             </div>
         </form>
 
-        <p class="mt-2 text-center text-sm text-gray-600">
+        <p class="auth-footer-link">
             Already have an account?
-            <a href="login.php" class="font-medium text-green-600 hover:text-green-500">Sign in</a>
+            <a href="login.php">Sign in</a>
         </p>
     </div>
 </body>
